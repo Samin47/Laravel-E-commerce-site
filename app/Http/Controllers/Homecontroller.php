@@ -25,6 +25,7 @@ class Homecontroller extends Controller
 
     public function index()
     {
+        //if any user is logged in, it will call redirect route
         if(Auth::id())
         {
             return redirect('redirect');
