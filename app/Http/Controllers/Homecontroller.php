@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 
+use App\Models\Product;
+
 class Homecontroller extends Controller
 {
     public function redirect()
@@ -18,7 +20,11 @@ class Homecontroller extends Controller
             return view('admin.home');
         }
         else {
-            return view('user.home');
+            
+            // $data = Product::all();
+             $data = Product::paginate(3);
+
+            return view('user.home',compact('data'));
         }
     }
 
@@ -32,7 +38,11 @@ class Homecontroller extends Controller
         }
 
         else{
-            return view('user.home');
+
+            //$data = Product::all();
+            $data = Product::paginate(3);
+
+            return view('user.home',compact('data'));
         }
         
     }
