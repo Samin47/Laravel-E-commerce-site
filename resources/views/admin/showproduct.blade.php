@@ -58,7 +58,7 @@
                 </td>
 
                 <td> 
-                  <a class="btn btn-primary" href="{{ url('updateproduct', $product->id)}}">Update</a>
+                  <a class="btn btn-primary" href="{{ url('updateview', $product->id)}}">Update</a>
                 </td>
                
 

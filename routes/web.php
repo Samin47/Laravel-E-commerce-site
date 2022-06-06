@@ -41,6 +41,12 @@ route::get('/showproduct',[AdminController::class, 'showproduct']);
 
 route::get('/deleteproduct/{id}',[AdminController::class, 'deleteproduct']);
 
-route::get('/updateproduct/{id}',[AdminController::class, 'updateproduct']);
+route::get('/updateview/{id}',[AdminController::class, 'updateview']);
+
+route::post('/updateproduct/{id}',[AdminController::class, 'updateproduct']);
 
 route::post('/uploadproduct',[AdminController::class, 'uploadproduct']);
+
+route::get('/search',[HomeController::class, 'search']);
+
+route::post('/addcart/{id}',[HomeController::class, 'addcart']);

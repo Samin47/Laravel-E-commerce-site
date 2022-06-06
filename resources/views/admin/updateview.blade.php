@@ -48,7 +48,7 @@
                 
             @endif
             
-            <form action='{{ url('uploadproduct') }}' method='post' enctype="multipart/form-data">
+            <form action='{{ url('updateproduct', $data->id) }}' method='post' enctype="multipart/form-data">
 
               @csrf
 
@@ -74,7 +74,7 @@
 
                 <div style="padding:15px;">
                     <label>Old image</label>
-                    <img height="200px" width="200px" src="/productimage/{{ $data->image }}"
+                    <img height="200px" width="200px" src="/productimage/{{ $data->image }}">
                 </div>
 
                 <div style="padding:15px;">

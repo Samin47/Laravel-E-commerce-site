@@ -23,9 +23,11 @@ https://templatemo.com/tm-546-sixteen-clothing
 -->
 
     <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+    
 
 </head>
 
@@ -91,6 +93,17 @@ https://templatemo.com/tm-546-sixteen-clothing
                 </div>
             </div>
         </nav>
+        @if (session()->has('message'))
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+ 
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">x</button>
+
+         {{ session()->get('message') }}
+
+        </div>
+           
+       @endif
     </header>
 
     <!-- Page Content -->
