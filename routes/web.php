@@ -50,3 +50,7 @@ route::post('/uploadproduct',[AdminController::class, 'uploadproduct']);
 route::get('/search',[HomeController::class, 'search']);
 
 route::post('/addcart/{id}',[HomeController::class, 'addcart']);
+
+route::get('/showcart',[HomeController::class, 'showcart']);
+
+route::get('/deletecart/{id}',[HomeController::class, 'deletecart']);

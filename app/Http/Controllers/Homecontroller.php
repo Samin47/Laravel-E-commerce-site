@@ -27,7 +27,11 @@ class Homecontroller extends Controller
             // $data = Product::all();
              $data = Product::paginate(3);
 
-            return view('user.home',compact('data'));
+             $user = Auth::user();
+
+             $count = Cart::where('phone', $user->mobile)->count();
+
+            return view('user.home',compact('data', 'count'));
         }
     }
 
@@ -96,5 +100,25 @@ class Homecontroller extends Controller
 
             return redirect('login');
         }
+    }
+
+    public function showcart()
+    {
+        $user = Auth::user();
+
+        $cart = Cart::where('phone',$user->mobile)->get();
+
+        $count = Cart::where('phone', $user->mobile)->count();
+
+        return view('user.showcart',compact('count','cart'));
+    }
+
+    public function deletecart($id)
+    {
+        $data = Cart::find($id);
+
+        $data->delete();
+
+        return redirect()->back()->with('message', 'Product removed from cart successfully');
     }
 }
